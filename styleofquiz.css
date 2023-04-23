@@ -1,0 +1,178 @@
+ label {
+    display: inline-block;
+    margin: 2.5rem;
+    width: 2.75rem;
+    height: 2.1rem;
+    border: solid 1px #ccc;
+    border-radius: 50%;
+    transition: all 0.7s;
+    font-size: larger;
+    padding-top: 0.5rem ;
+  }
+  
+   input[type="radio"] {
+    display: none;
+  }
+  
+ input[type="radio"]:checked + label {
+    background-color: rgb(255, 157, 0);
+    color: #171717;
+}
+body{
+    font-family: 'Noto Sans Hebrew', sans-serif;
+    margin:0;
+    background-color: #171717;
+}
+@import url('https://fonts.googleapis.com/css2?family=Assistant:wght@200;300;600&display=swap'); 
+/* this is the navbar */
+
+span.md-3remenu,span.back{
+    color: whitesmoke !important;
+    font-size: 2.5rem;
+    cursor: pointer !important;
+}
+span.arrow{
+    color:whitesmoke;
+    font-size: 3rem;
+}
+.arrow{
+    top: 70px;
+    right: 60px;
+    position:relative;
+}
+.arrowb{
+    text-decoration: none;
+    background-color: #ffffff00 !important;
+    border: none !important;
+    cursor: pointer !important;
+}
+.logo{
+    width: 4rem;
+    position: absolute !important;
+    top: 2%;
+    right: 32%;
+}
+.menubutton-show,.back{
+    text-decoration: none;
+    background-color: #ffffff00 !important;
+    border: none !important;
+    font-size: 3rem !important;
+    position: absolute;
+    right: .6%;
+    top: .5%;
+    height: 2px;
+    right: -50;
+    top: -40;
+}
+.menubutton-hide{
+    text-decoration: none;
+    background-color: #ffffff00 !important;
+    border: none !important;
+    font-size: 3rem !important;
+    transition: all 5s;
+    position:absolute;
+    top: 0.5%;
+    right: -20%;
+}
+.nav-closed{
+    width: 15%;
+    height: 100%;
+    position: absolute;
+    right: -50%;
+    background-color: orange;
+    transition: all 3s;
+}
+.nav-open{
+    background-color:rgb(255, 149, 0) !important;
+    width: 20% !important;
+    height: 67.5rem !important;
+    position:absolute;
+    top: 0;
+    right: 0;
+    transition-delay: 0.5s;
+    transition:all 1.5s !important;
+}
+a:any-link{
+    color: black;
+    text-decoration: none !important;
+    font-size:2rem;
+}
+.menulinks{
+    position: absolute;
+    top: 30%;
+    height: 40%;
+    height: 30%;
+    width: 80%;
+    padding-inline-start: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content:space-between;
+}
+.login{
+    position: absolute;
+    bottom: 1%;
+    right: 2%;
+}
+span.login-first{
+    color: #D6D5CB !important;
+    font-size: 2.5rem;
+    cursor: pointer !important;
+}
+.quizbut{
+    text-decoration: none;
+    background-color: #ffffff00 !important;
+    border: none !important;
+}
+.quiz{
+    position: absolute;
+    bottom: 1%;
+    left: 2%;
+}
+span.quiz{
+    color: #D6D5CB !important;
+    font-size: 2.5rem;
+    cursor: pointer !important;
+}
+/* the end of the navbar */
+main{
+    margin-left: 4%;
+    margin-right: 4%;
+    color: rgb(255, 157, 0);
+    font-family: 'Assistant', sans-serif;
+    font-weight: 300;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+h2{
+    font-size: 2.4em;
+}
+p{
+    font-weight: 200;
+    font-size: 1.5em;
+}
+h1{
+    font-weight: 600;
+    font-size: 4em;
+    text-align: center;
+    margin-top: -.2rem;
+}
+h3 > a{
+    color:rgb(255, 157, 0) !important;
+    
+}
+.h2spe{
+    margin-top: 4em !important;
+}
+button{
+    font-size: large;
+    border-color: rgb(255, 157, 0);
+    color: rgba(245, 245, 245, 0.75);
+    background-color: #171717;
+    border-radius: 20px;
+    width: 20%;
+    height: 45%;
+    margin-top: 3rem;
+    margin-bottom: 3.5rem;
+}

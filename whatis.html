@@ -1,0 +1,120 @@
+<html lang="he" dir="rtl">
+    <head>
+        <title>
+                What is Singolan?
+        </title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@200;300;600&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+        <link rel="stylesheet" href="template.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Hebrew:wght@300&display=swap" rel="stylesheet">
+    </head>
+    <body onload="load()">
+        <nav>
+            <div class="allmenu">
+                <button class="menubutton-show" onclick="menuclick()">
+                    <span class="material-symbols-outlined md-3remenu">
+                        menu
+                    </span>
+                </button>
+                <!---- actul navbar---->
+                <div class="nav-closed" id="nav">
+                    <div class="arrow">
+                        <button class="arrowb" onclick="menuclick()">
+                            <span class="material-symbols-outlined arrow">
+                              arrow_forward_ios
+                            </span>
+                        </button>
+                    </div>
+                    <img src="img/golanlogog.png" alt="the shevet Golan logo" class="logo" onclick="change()">
+                    <div class="menulinks">
+                            <a class="link1" href="homepage.html">
+                                דף הבית
+                            </a>
+                            <br>
+                            <a class="link2" href="shachbag.html">
+                                השכב״ג
+                            </a>
+                            <br>
+                            <a class="link3" href="gdodim.html">
+                                הגדודים 
+                            </a>
+                            <br>
+                            <a class="link4" href="prev.html">
+                                שנים קודמות
+                            </a>
+                    </div>
+                    <div class="login">
+                        <a href="login.html">
+                            <span class="material-symbols-outlined login-first">
+                                login
+                            </span>
+                        </a>
+                    </div>
+                    <div class="quiz">
+                        <button class="quizbut" onclick="quizwin()">
+                            <span class="material-symbols-outlined quiz">
+                                quiz
+                            </button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <main id="mainhide">
+            <h1>
+                מה זה סינגולן?
+            </h1>
+            <h2 class="h2spe">
+                אז מה זה בעצם סינגולן?
+                <br>
+                סינגולן הוא בעצם הפסטיבל השבטי של שבט גולן אשר מתקיים כל שנה בסמוך לחנוכה. הפסטיבל עצמו התחיל בשנת 2009 והפך למפעל השני האהוב על החניכים בשבט
+                <br>
+                בגלל שהוא לא מפעל חובה הסינגולן בעצם מבטא את חוזקו של השבט למרות היותו שבט יחסית קטן לשאר ההנהגה וגם נועד בכדי להכין את השכב״ג למפעל הקיץ למחנ״ק.
+            </h2>
+        </main>
+        <footer>
+        </footer>
+        <script type="text/javascript">
+            const menu = document.querySelector(".nav-closed" );
+            const menubut = document.querySelector(".menubutton-show");
+            function menuclick(){//פונקציה המחליפה את שמות הכפתורים על מנת להחליף את עיצובו ומקומו של סרגל הניווט
+                if(menu.className=="nav-closed" ){
+                    menu.classList.replace('nav-closed','nav-open');
+                    menubut.classList.replace('menubutton-show','menubutton-hide');
+                }
+                else{
+                    menu.classList.replace('nav-open','nav-closed');
+                    menubut.classList.replace('menubutton-hide','menubutton-show');
+                }
+            }
+            function quizwin(){
+                window.open("quizwin.html","QuizWin","width=800,height=700,bottom=250,top=300,left=400,resizable,popup");
+            }
+            function load(){
+                document.getElementById("mainhide").id = "mainshow";
+            }
+            function change(){
+                if(document.body.style.backgroundColor=="rgb(23, 23, 23)"){
+                    document.getElementById("mainshow").style.color="rgb(23, 23, 23)";
+                    document.getElementById("nav").style.backgroundColor="rgb(23, 23, 23)";
+                    document.body.style.backgroundColor = "rgb(255, 149, 0)";
+                    for(let i=0;i<document.querySelectorAll("a").length;i++){
+                        document.querySelectorAll("a")[i].style.color="rgb(255, 149, 0)";
+                    } 
+                }
+                else{
+                    document.getElementById("nav").style.backgroundColor="rgb(255, 149, 0)";
+                    document.getElementById("mainshow").style.color="rgb(255, 149, 0)";
+                    document.body.style.backgroundColor = "rgb(23, 23, 23)";
+                    for(let i=0;i<document.querySelectorAll("a").length;i++){
+                        document.querySelectorAll("a")[i].style.color="rgb(23, 23, 23)";
+                    }
+                }
+            }
+        </script>
+    </body>
+</html>

@@ -1,0 +1,218 @@
+<html lang="he" dir="rtl">
+    <head>
+        <title>
+            Signup
+        </title>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+        <link rel="stylesheet" href="stylesofsignup.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Hebrew:wght@300&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <nav>
+            <div class="allmenu">
+                <button class="menubutton-show" onclick="menuclick()">
+                    <span class="material-symbols-outlined md-3remenu">
+                        menu
+                    </span>
+                </button>
+                <!---- actul navbar---->
+                <div class="nav-closed">
+                    <div class="arrow">
+                        <button class="arrowb" onclick="menuclick()">
+                            <span class="material-symbols-outlined arrow">
+                              arrow_forward_ios
+                            </span>
+                        </button>
+                    </div>
+                    <img src="img/golanlogog.png" alt="the shevet Golan logo" class="logo">
+                    <div class="menulinks">
+                            <a class="link1" href="homepage.html">
+                                דף הבית
+                            </a>
+                            <br>
+                            <a class="link2" href="gdodim.html">
+                                הגדודים
+                            </a>
+                            <br>
+                            <a class="link3" href="shachbag.html">
+                                השכב״ג
+                            </a>
+                            <br>
+                            <a class="link4" href="prev.html">
+                                שנים קודמות
+                            </a>
+                            <br>
+                            <a class="link5" href="whatis.html">
+                                מה זה סינגולן?
+                            </a>
+                    </div>
+                    <div class="login">
+                        <a href="login.html">
+                            <span class="material-symbols-outlined login-first">
+                                login
+                            </span>
+                        </a>
+                    </div>
+                    <div class="quiz">
+                        <button class="quizbut" onclick="quizwin()">
+                            <span class="material-symbols-outlined quiz">
+                                quiz
+                            </button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <main>
+            <div class="signupform">
+                <h1>
+                    הרשמה
+                </h1>
+                <form onsubmit="tof()" action="" method="post" name="signup" class="signupp">
+					<input type="text" name="username" class="usernamee" placeholder="שם משתמש (רק באנגלית או מספרים)">
+                    <br>
+					<input type="password" name="password" class="password" placeholder="סיסמה (מינימום 4 תווים וספרה אחת)">
+                    <br>
+                    <input type="password" name="passwordconf" class="password confermation" placeholder="אימות סיסמה">
+                    <br>
+                    <input type="text" name="email" class="email" placeholder="(xxx111@gmail.com:כתובת דוא״ל לדוגמה)דואר אלקטרוני" dir="ltr">
+                    <br>
+                    <input type="text" name="phonenum" class="phone" placeholder="(מספרים בלבד)מספר טלפון" dir="ltr">
+                    <br>
+                    <input type="text" name="yob" class="yob" placeholder="(מספרים בלבד)שנת לידה" dir="ltr">
+                    <br>
+                    <select name="gender" >
+                        <option value=""  disabled="disabled" selected>----מגדר----</option>
+                        <option value="male">זכר</option>
+                        <option value="female">נקבה</option>
+                    </select>
+                    <br>
+                    <label for="notify me">
+                        <input type="checkbox" name="notifyme" id="notify me" checked>
+                            אני רוצה לקבל התראות ועדכונים משבט גולן לתיבת הדואר האלקטרוני שלי
+                    </label>
+                    <br>
+					<input name="submit" type="submit" value="הרשם">
+				</form>
+            </div>
+        </main>
+        <footer>
+        </footer>
+    </body>
+    <script type="text/javascript">
+        const menu = document.querySelector(".nav-closed");
+        const menubut = document.querySelector(".menubutton-show");
+        function menuclick(){//פונקציה המחליפה את שמות הכפתורים על מנת להחליף את עיצובו ומקומו של סרגל הניווט//פונקציה המחליפה את שמות הכפתורים על מנת להחליף את עיצובו ומקומו של סרגל הניווט
+            if(menu.className==="nav-closed"){
+                menu.classList.replace('nav-closed','nav-open');
+                menubut.classList.replace('menubutton-show','menubutton-hide');
+            }
+            else{
+                menu.classList.replace('nav-open','nav-closed');
+                menubut.classList.replace('menubutton-hide','menubutton-show');
+            }
+        }
+        
+        function usernamecheck(){ // פונקציה הבודקת האם השם משתמש הוא רק אותיות ומספרים			
+				let name=document.signup.username.value;
+				if (name.length==0){
+					return false;
+                }
+
+				let temp;
+                temp=0;
+				for (let i=0;i<name.length;i++)
+					if(name.charAt(i)<'a' || name.charAt(i)>'z'){
+                        if(name.charAt(i)<'A' || name.charAt(i)>'Z'){
+                            if(name.charAt(i)<'0'||name.charAt(i)>'9'){
+						        temp++;
+						        break;
+                            }
+                        }
+					}
+				if (temp!=0)
+					return false;
+
+				return true;
+            }
+			function passwordcheck(){ // לפחות פונקציה הבודקת האם בסיסמה יש לפחות ארבע תווים ומספר אחד לפחות
+				let password=document.signup.password.value;
+				let count=0;
+                if(password.length < 4)
+                    return false;
+
+				for (let i=0;i<password.length;i++)
+					if(password.charAt(i)>='0' || password.charAt(i)<='9'){
+						count++;
+						break;
+					}	
+				if (count==0)
+					return false;
+                
+				return true;
+			}
+			function passwordconf(){ //פונקציה הבודקת האם האימות הסיסמה שווה לסיסמה
+				let str1=document.signup.password.value;
+				let str2=document.signup.passwordconf.value;
+				if (str1!=str2)
+					return false;
+
+				return true;
+			}
+			function yobcheck(){ //פונקציה הבודקת האם שנת לידה שהוזן הוא רק מספרים
+				let num1=document.signup.yob.value;
+				if (isNaN(num1))
+					return false;
+				return true;
+			}
+			function phonecheck(){ //פונקציה הבודקת האם הטלפון שהוזן הוא רק מספרים
+	
+				let ph = document.signup.phonenum.value;
+				if (isNaN(ph))
+					return false;
+
+				return true;
+			}
+			function emailcheck(){ //פונקציה הבודקת האם האימייל שהוזן תקין
+			
+				let str = document.signup.email.value;
+				let at=0;
+				if (str.charAt(0)=="@" || str.charAt(str.length-1)=="@")
+					return false;
+
+				for (let i=0;i<str.length;i++){
+					if (str.charAt(i)=="@")
+						at++;
+				}
+				if (at!=1)
+					return false;
+
+				if (str.charAt(0)=="."|| str.charAt(str.length-1)==".")
+					return false;
+                
+				return true;
+			}
+			function gendercheck(){
+                let g = document.signup.gender.value
+                if(g=="")
+                    return false;
+                
+                return true;
+            }
+			function tof(){ //פונקציה המפעילה את כל שאר הפונקציות ואם אחת מהן לא תקינה תציג הודעה שגיאה
+                if(usernamecheck() && passwordcheck() && passwordconf() && yobcheck() && phonecheck() && emailcheck() && gendercheck()){
+                    alert("נרשמת בהצלחה");
+                    return true;
+                }
+                else{
+                    alert("אנא מלא את כל השדות לפי הדרישות המתאימות");
+                    return false;
+                }
+			}
+            function quizwin(){
+                window.open("quizwin.html","QuizWin","width=800,height=700,bottom=250,top=300,left=400,resizable,popup");;
+            }
+    </script>
+</html>

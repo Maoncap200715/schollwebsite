@@ -1,0 +1,103 @@
+<html lang="he" dir="rtl">
+    <head>
+        <title>
+                Login
+        </title>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+        <link rel="stylesheet" href="stylesoflogin.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Hebrew:wght@300&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <nav>
+            <div class="allmenu">
+                <button class="menubutton-show" onclick="menuclick()">
+                    <span class="material-symbols-outlined md-3remenu">
+                        menu
+                    </span>
+                </button>
+                <!---- actul navbar---->
+                <div class="nav-closed">
+                    <div class="arrow">
+                        <button class="arrowb" onclick="menuclick()">
+                            <span class="material-symbols-outlined arrow">
+                              arrow_forward_ios
+                            </span>
+                        </button>
+                    </div>
+                    <img src="img/golanlogog.png" alt="the shevet Golan logo" class="logo">
+                    <div class="menulinks">
+                            <a class="link1" href="homepage.html">
+                                דף הבית
+                            </a>
+                            <br>
+                            <a class="link2" href="gdodim.html">
+                                הגדודים
+                            </a>
+                            <br>
+                            <a class="link3" href="shachbag.html">
+                                השכב״ג
+                            </a>
+                            <br>
+                            <a class="link4" href="prev.html">
+                                שנים קודמות
+                            </a>
+                            <br>
+                            <a class="link5" href="whatis.html">
+                                מה זה סינגולן?
+                            </a>
+                    </div>
+                    <div class="quiz">
+                        <button class="quizbut" onclick="quizwin()">
+                            <span class="material-symbols-outlined quiz">
+                                quiz
+                            </button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <main>
+            <div class="login">
+                <h1>
+                    הכנס שם משתמש וסיסמה 
+                </h1>
+                <form action="" method="post">
+					<input type="text" name="username" placeholder="שם משתמש">
+                    <br>
+					<input type="password" name="password" placeholder="סיסמה">
+                    <br>
+					<input name="submit" type="submit" value="כניסה">
+				</form>
+                <p class="signup">
+                    לא משתמש רשום?
+                    <a href="signup.html" class="uplink">
+                        <s>
+                            לחץ כאן
+                        </s>
+                    </a>
+                </p>
+            </div>
+        </main>
+        <footer>
+        </footer>
+        <script type="text/javascript">
+            const menu = document.querySelector(".nav-closed");
+            const menubut = document.querySelector(".menubutton-show");
+            function menuclick(){//פונקציה המחליפה את שמות הכפתורים על מנת להחליף את עיצובו ומקומו של סרגל הניווט
+                if(menu.className=="nav-closed"){
+                    menu.classList.replace('nav-closed','nav-open');
+                    menubut.classList.replace('menubutton-show','menubutton-hide');
+                }
+                else{
+                    menu.classList.replace('nav-open','nav-closed');
+                    menubut.classList.replace('menubutton-hide','menubutton-show');
+                }
+            }
+            function quizwin(){
+                window.open("quizwin.html","QuizWin","width=800,height=700,bottom=250,top=300,left=400,resizable,popup");
+            }
+        </script>
+    </body>
+</html>
